@@ -10,6 +10,17 @@
 		<input type="text" id="input" v-model="message">
 
 		<p>The value of the input is {{ message }}</p>
+
+    <ul>
+      <li v-for="name in names">{{ name }}</li>
+    </ul>
+
+    <input id="input" type="text" v-model="newName">
+      <!-- register event listeners -->
+      <button @click="addName">Add name</button>
+      <!-- same as... -->
+      <!-- <button v-on:click="addName">Add name</button> -->
+    </input>
 	</div>
 
 
@@ -17,13 +28,24 @@
 
 	<script>
 		// create a vue instance
-		new Vue({
+		var app = new Vue({
 			// bind it to an element 
 			el: '#root',
 			// specify some data
 			data: {
-				message: 'Carbon Dioxide'
-			}
+				message: 'Carbon Dioxide',
+        // start with an empty string and then push it
+        newName: '',
+        names: ['Joe', 'Mary', 'Jane', 'Jack']
+			},
+
+      methods: { 
+          addName() { 
+            this.names.push(this.newName)
+            this.newName = '';
+          }
+      },
+
 		})
 	</script>
 
