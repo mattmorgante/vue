@@ -6,6 +6,9 @@
 </head>
 <body>
 	<div id="root">
+    <!-- bind the title attribute to whatever is in the ata -->
+    <button v-bind:title="title">Hover over me</button>
+
 		<!-- v model is specific for form inputs -->
 		<input type="text" id="input" v-model="message">
 
@@ -33,6 +36,7 @@
 			el: '#root',
 			// specify some data
 			data: {
+        title: 'Lets set the title via Javascript',
 				message: 'Carbon Dioxide',
         // start with an empty string and then push it
         newName: '',
