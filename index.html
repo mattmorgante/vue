@@ -3,11 +3,17 @@
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css">
 	<title></title>
+  <style>
+    .color-red { color: red;}
+    .color-blue { color: blue;}
+  </style>
 </head>
 <body>
 	<div id="root">
-    <!-- bind the title attribute to whatever is in the ata -->
+    <!-- bind the title attribute to whatever is in the data -->
     <button v-bind:title="title">Hover over me</button>
+
+    <h1 :class="className">Hello world</h1>
 
 		<!-- v model is specific for form inputs -->
 		<input type="text" id="input" v-model="message">
@@ -38,6 +44,7 @@
 			data: {
         title: 'Lets set the title via Javascript',
 				message: 'Carbon Dioxide',
+        className: 'color-red',
         // start with an empty string and then push it
         newName: '',
         names: ['Joe', 'Mary', 'Jane', 'Jack']
@@ -55,6 +62,81 @@
 
 
 	<br><br><br>
+
+<div class="container">
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <article class="tile is-child box notification is-warning">
+        <p class="title">Hello World</p>
+        <p class="subtitle">What is up?</p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box notification is-info">
+        <p class="title">Foo</p>
+        <p class="subtitle">Bar</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="tile is-ancestor">
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p class="title">Hello World</p>
+        <p class="subtitle">What is up?</p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p class="title">Foo</p>
+        <p class="subtitle">Bar</p>
+      </article>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box">
+        <p class="title">Third column</p>
+        <p class="subtitle">With some content</p>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="columns">
+  <div class="column is-half">
+    <p class="notification is-info">
+      <code class="html">is-half</code>
+    </p>
+  </div>
+  <div class="column is-half">
+    <p class="notification is-info">
+      <code class="html">is-half</code>
+    </p>
+  </div>
+</div>
+  <div class="columns">
+    <div class="column is-one-third">
+      <p class="notification is-info">
+        <code class="html">is-one-third</code>
+      </p>
+    </div>
+    <div class="column is-one-third">
+      <p class="notification is-info">
+        <code class="html">is-one-third</code>
+      </p>
+    </div>
+    <div class="column is-one-third">
+      <p class="notification is-info">
+        <code class="html">is-one-third</code>
+      </p>
+    </div>
+  </div>
+
 
 	<div id="grid" class="columns">
       <div class="column">
