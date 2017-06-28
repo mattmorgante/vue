@@ -49,16 +49,19 @@
   <hr>
   <div class="tile is-ancestor">
     <div class="tile is-parent">
-      <article class="tile is-child box notification is-warning has-text-centered">
+      <article class="tile is-child box notification is-black has-text-centered">
         <p class="title">Carbon Dioxide</p>
-        <p class="root">Days: {{ message }} </p>
+        <div class="content">
+          <p class="days">Days: {{ number_of_days }} </p>
+        </div>
       </article>
     </div>
     <div class="tile is-parent">
       <article class="tile is-child box notification is-info has-text-centered">
         <p class="title">Water</p>
-        <p class="subtitle"></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+        </div>
       </article>
     </div>
   </div>
@@ -68,13 +71,17 @@
     <div class="tile is-parent">
       <article class="tile is-child box notification is-success has-text-centered ">
         <p class="title">Forest</p>
-        <p class="subtitle">What is up?</p>
+        <div class="content">
+          <p>What is up?</p>
+        </div>
       </article>
     </div>
     <div class="tile is-parent">
       <article class="tile is-child box notification has-text-centered is-danger">
         <p class="title">Animal Lives</p>
-        <p class="subtitle">Bar</p>
+        <div class="content">
+          <p>What is up?</p>
+        </div>
       </article>
     </div>
     <div class="tile is-parent">
@@ -121,6 +128,14 @@
   </div>
   <!-- End of card -->
 </div>
+<br>
+<nav class="level">
+    <div class="level-item has-text-centered">
+      <a class="button is-success is-outlined is-large">
+          Educate Yourself >>>
+      </a>
+    </div>
+  </nav>
 <!-- End of container -->
 <br>
 
@@ -131,10 +146,10 @@
     // create a vue instance
     var app = new Vue({
       // bind it to an element 
-      el: '.root',
+      el: '.days',
       // specify some data
       data: {
-        message: '7',
+        number_of_days: '7',
         className: 'color-red',
         // start with an empty string and then push it
       },
