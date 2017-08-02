@@ -4,8 +4,25 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css">
 	<title></title>
   <style>
-    .color-red { color: red;}
-    .color-blue { color: blue;}
+    .label {
+      position: relative;
+      display: inline-block;
+      width: 19.7%;
+      margin: 0;
+      padding: 0;
+      /*border-left: 2px solid black;*/
+    }
+
+    /*.label span {*/
+      /*position: absolute;*/
+      /*top: 0;*/
+    /*}*/
+    /*.label span:before{*/
+      /*content: "|";*/
+      /*position:absolute;*/
+      /*left:0px;top:-20px;*/
+    /*}*/
+
   </style>
 </head>
 <body>
@@ -19,7 +36,32 @@
 </div>
 <br>
 
-  <input type="range" id="myRange" value="0" step ="20" onchange="updateValue(this.value)">
+  <input type="range" id="myRange" value="0" step ="25" oninput="updateValue(this.value)" style="width: 100%;">
+
+  <datalist id="tickmarks">
+    <option value="0" label="0%">
+    <option value="25">
+    <option value="50" label="50%">
+    <option value="75">
+    <option value="100" label="100%">
+  </datalist>
+    <!--<ul>-->
+      <!--<li class="label">-->
+        <!--<span>Average American</span>-->
+      <!--</li>-->
+      <!--<li class="label">-->
+        <!--<span style="left:20%">Omnivore</span>-->
+      <!--</li>-->
+      <!--<li class="label">-->
+        <!--<span>Pescatarian</span>-->
+      <!--</li>-->
+      <!--<li class="label">-->
+        <!--<span >Vegetarian</span>-->
+      <!--</li>-->
+      <!--<li class="label" >-->
+        <!--<span style="float:right">Vegan</span>-->
+      <!--</li>-->
+    <!--</ul>-->
 
   <hr>
   <div class="tile is-ancestor">
@@ -185,7 +227,7 @@
 <nav class="level">
     <div class="level-item has-text-centered">
       <a class="button is-success is-outlined is-large">
-          Educate Yourself >>>
+          Join the Slack Group
       </a>
     </div>
   </nav>
@@ -195,7 +237,7 @@
 
   <script>
     // get the value of the slider from user
-    var values = [400, 9000, 30, 250 ,1];
+    const values = [400, 9000, 30, 250 ,1];
 
     var newValues = [];
     var widgets = document.getElementsByClassName('widget');
@@ -205,18 +247,11 @@
       console.log(slider);
       // iterate through $values, defined above
       // foreach i, multiply i by value of slider
-      values.forEach(function(entry) {
-        newValues.push(entry * slider);
+      values.forEach(function(value, i) {
+        newValues.push(value * slider);
+        widgets[i].innerHTML = newValues[i];
       });
-      // newValues is what we want to insert in the dom
-      console.log(newValues);
 
-      // loop through the node list widgets
-      if(widgets.length > 0) {
-        for(var i=0; i<widgets.length; i++) {
-          widgets[i].innerHTML = newValues[i];
-        }
-      }
       // clear new values
       newValues = [];
     }
