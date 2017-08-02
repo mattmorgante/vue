@@ -19,48 +19,21 @@
 </div>
 <br>
 
-
-  <nav class="level">
-    <div class="level-item has-text-centered">
-      <h3 class="title is-3">Try it out</h3>
-    </div>
-    <div class="level-item has-text-centered">
-      <a class="button is-success is-outlined is-large">
-          1 day
-      </a>
-    </div>
-    <div class="level-item has-text-centered">
-      <a class="button is-success is-outlined is-large">
-          1 week
-      </a>
-    </div>
-    <div class="level-item has-text-centered">
-      <a class="button is-success is-outlined is-large">
-          1 month
-      </a>
-    </div>
-    <div class="level-item has-text-centered">
-      <a class="button is-success is-outlined is-large">
-          1 year
-      </a>
-    </div>
-  </nav>
+  <input type="range" id="myRange" value="0" step ="20" onchange="updateValue(this.value)">
 
   <hr>
   <div class="tile is-ancestor">
     <div class="tile is-parent">
       <article class="tile is-child box notification is-black has-text-centered">
         <p class="title">Carbon Dioxide</p>
-        <div class="content">
-          <p class="days">Days: {{ number_of_days }} </p>
+        <div class="content widget">
         </div>
       </article>
     </div>
     <div class="tile is-parent">
       <article class="tile is-child box notification is-info has-text-centered">
         <p class="title">Water</p>
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+        <div class="content widget">
         </div>
       </article>
     </div>
@@ -71,15 +44,14 @@
     <div class="tile is-parent">
       <article class="tile is-child box notification is-success has-text-centered ">
         <p class="title">Forest</p>
-        <div class="content">
-          <p>What is up?</p>
+        <div class="content widget">
         </div>
       </article>
     </div>
     <div class="tile is-parent">
       <article class="tile is-child box notification has-text-centered is-danger">
         <p class="title">Animal Lives</p>
-        <div class="content">
+        <div class="content widget">
           <p>What is up?</p>
         </div>
       </article>
@@ -87,8 +59,7 @@
     <div class="tile is-parent">
       <article class="tile is-child box notification has-text-centered is-primary">
         <p class="title">Land Use</p>
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+        <div class="content widget">
         </div>
       </article>
     </div>
@@ -129,6 +100,88 @@
   <!-- End of card -->
 </div>
 <br>
+<hr>
+<div class="box">
+  <h3 class="title is-3">Why to go Vegan</h3>
+</div>
+<div class="columns">
+  <div class="column">
+    <a href="http://amzn.to/2ujFgHg">
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-primary">
+          <p class="title">Vegan On The Cheap</p>
+          <p class="subtitle">Easy and affordable vegan recipes</p>
+          <figure class="image is-4by3">
+            <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735">
+          </figure>
+        </article>
+      </div>
+    </a>
+  </div>
+  <div class="column">
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-light">
+        <p class="title">Thug Kitchen</p>
+        <p class="subtitle">For The Vegan Foodie</p>
+        <figure class="image is-4by3">
+          <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735">
+        </figure>
+      </article>
+    </div>
+  </div>
+  <div class="column">
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-black">
+        <p class="title">Oh She Glows</p>
+        <p class="subtitle">Short Description</p>
+        <figure class="image is-4by3">
+          <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735">
+        </figure>
+      </article>
+    </div>
+  </div>
+</div>
+
+<div class="box">
+  <h3 class="title is-3">How to go Vegan</h3>
+</div>
+
+<div class="columns">
+  <div class="column">
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-info">
+        <p class="title">Minimalist Baker</p>
+        <p class="subtitle">Short Description</p>
+        <figure class="image is-4by3">
+          <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735">
+        </figure>
+      </article>
+    </div>
+  </div>
+  <div class="column">
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-success">
+        <p class="title">Plant Based On A Budget</p>
+        <p class="subtitle">Short Description</p>
+        <figure class="image is-4by3">
+          <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735">
+        </figure>
+      </article>
+    </div>
+  </div>
+  <div class="column">
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-grey">
+        <p class="title">Minimalist Baker</p>
+        <p class="subtitle">Short Description</p>
+        <figure class="image is-4by3">
+          <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735">
+        </figure>
+      </article>
+    </div>
+  </div>
+</div>
+
 <nav class="level">
     <div class="level-item has-text-centered">
       <a class="button is-success is-outlined is-large">
@@ -140,20 +193,36 @@
 <br>
 
 
-  <script src="https://unpkg.com/vue@2.1.3/dist/vue.js"></script>
-
   <script>
-    // create a vue instance
-    var app = new Vue({
-      // bind it to an element 
-      el: '.days',
-      // specify some data
-      data: {
-        number_of_days: '7',
-        className: 'color-red',
-        // start with an empty string and then push it
-      },
-    })
+    // get the value of the slider from user
+    var values = [400, 9000, 30, 250 ,1];
+
+    var newValues = [];
+    var widgets = document.getElementsByClassName('widget');
+
+    function updateValue(slider) {
+      // first get the value from the input event listener
+      console.log(slider);
+      // iterate through $values, defined above
+      // foreach i, multiply i by value of slider
+      values.forEach(function(entry) {
+        newValues.push(entry * slider);
+      });
+      // newValues is what we want to insert in the dom
+      console.log(newValues);
+
+      // loop through the node list widgets
+      if(widgets.length > 0) {
+        for(var i=0; i<widgets.length; i++) {
+          widgets[i].innerHTML = newValues[i];
+        }
+      }
+      // clear new values
+      newValues = [];
+    }
+
+
+    //
   </script>
 
 </body>
